@@ -104,7 +104,7 @@ def MergePad2(output_dir, outputname ,noise, mergelist = None, waiting_time = 10
     for cnt,fname in enumerate(mergelist):
         label, trace = load_trace(fname)
         labels += label + '\t'
-        this = merge(this, trace, start, cnt = cnt + 1)
+        this = merge(this, trace, start, cnt =  1)
         start = this[-1][0]
         '''pad noise or not'''
         if noise:
@@ -117,7 +117,7 @@ def MergePad2(output_dir, outputname ,noise, mergelist = None, waiting_time = 10
             small_time = est_iat(trace)
             logger.debug("Delta t is %.5f seconds"%(small_time))
             _, noise_site = load_trace(noise_fname, max(t - small_time, 0),True)
-            this = merge(this, noise_site,start+small_time, cnt = 999)
+            this = merge(this, noise_site,start+small_time, cnt = 1)
             # logger.info("Dwell time is %.2f seconds"%(t))
             start = start + t
         else:
@@ -297,6 +297,7 @@ def CreateRandomMergedTrace(traces_path, list_names, N, M,BaseRate):
     for i,num in enumerate(nums):
         mergedTrace.append(np.random.choice(list_sensitive+list_nonsensitive, num, replace = False,\
                                   p = [1.0/(s1*(BaseRate+1))]*s1 + [BaseRate /(s2*(BaseRate+1))]*s2))
+        
     return mergedTrace, nums
 
 

@@ -19,8 +19,8 @@ import logging
 logger = logging.getLogger('wtfpad')
 
 MON_SITE_NUM = 100
-MON_INST_NUM = 100
-UNMON_SITE_NUM = 9800
+MON_INST_NUM = 90
+UNMON_SITE_NUM = 9000
 OPEN_WORLD = 1
 
 def init_directories(config):

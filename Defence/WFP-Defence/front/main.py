@@ -143,8 +143,8 @@ def RP(trace):
 
     # print("client_timetable")
     # print(client_timetable[:10])
-    client_pkts = np.concatenate((client_timetable, 888 * np.ones((len(client_timetable), 1))), axis=1)
-    server_pkts = np.concatenate((server_timetable, -888 * np.ones((len(server_timetable), 1))), axis=1)
+    client_pkts = np.concatenate((client_timetable, 1 * np.ones((len(client_timetable), 1))), axis=1)
+    server_pkts = np.concatenate((server_timetable, -1 * np.ones((len(server_timetable), 1))), axis=1)
 
     noisy_trace = np.concatenate((trace, client_pkts, server_pkts), axis=0)
     noisy_trace = noisy_trace[noisy_trace[:, 0].argsort(kind='mergesort')]
@@ -195,18 +195,16 @@ if __name__ == '__main__':
     flist = []
     for i in range(MON_SITE_NUM):
         for j in range(MON_INST_NUM):
-            read_file= join(args.p, str(i) + '-' + str(j) + args.format)
-            print("reading:",read_file)
+            read_file= join(args.p, str(i) + '-' + str(j) + args.format + '.cell')
             flist.append(read_file)
     for i in range(UNMON_SITE_NUM):
-        flist.append(join(args.p, str(i) + args.format))
+        flist.append(join(args.p, str(i) + args.format+'.cell'))
 
     # Init run directories
     output_dir = init_directories()
     logger.info("Traces are dumped to {}".format(output_dir))
     start = time.time()
     for i,f in enumerate(flist):
-         logger.debug('Simulating {}'.format(f))
          if i %2000 == 0:
              print(r"Done for inst ",i,flush = True)
          simulate(f)

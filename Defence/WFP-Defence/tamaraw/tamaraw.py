@@ -17,13 +17,13 @@ import overheads
 logger = logging.getLogger('tamaraw')
 
 '''params'''
-DATASIZE = 1500
+DATASIZE = 1
 DUMMYCODE = 1
 PadL = 50
 
 MON_SITE_NUM = 100
-MON_INST_NUM = 100
-UNMON_SITE_NUM = 10000
+MON_INST_NUM = 90
+UNMON_SITE_NUM = 9000
 
 # MON_SITE_NUM = 1
 # MON_INST_NUM = 2
@@ -284,7 +284,7 @@ if __name__ == '__main__':
             # bandwidths.append(bandwidth)
             logger.info("Latency overhead: %.4f,size overhead:%.4f" % (latency, size))
 
-    for site in range(100, UNMON_SITE_NUM):
+    for site in range(0, UNMON_SITE_NUM):
         fname = f"{site}.cell"
         logger.info('Simulating %s..' % fname)
         packets = []

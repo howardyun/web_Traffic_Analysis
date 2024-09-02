@@ -166,3 +166,16 @@ ysx/collectData/
 ysx/Tor Collect/DatawithTor
 /Defence/try2data/json/
 /Defence/try2data/pcap/
+Defence/data/*
+/Defence/WFP-Defence/results/*
+.vscode/
+/attacks/cumul/results/*
+/attacks/df/results/*
+attacks/kfingerprinting/results/*
+attacks/knn/data
+attacks/knn/result
+attacks/knn/output/*
+attacks/knn/log*
+attacks/knn/flearner-com.exe
+attacks/knn/flearner.exe
+attacks/knn/flearner.results
