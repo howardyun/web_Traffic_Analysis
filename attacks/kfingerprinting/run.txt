@@ -1,0 +1,3 @@
+#!/bin/bash
+python main2.py ./results/20000.npy ./results/tamaraw_0820_1034.npy >> log.txt
+python main2.py ./results/20000.npy ./results/wtfpad_0821_1454.npy >> log.txt

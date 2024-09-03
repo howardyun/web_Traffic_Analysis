@@ -1,0 +1,14 @@
+#for all attacks
+OPEN	1
+DATA_LOC	./
+OUTPUT_LOC	./output/
+
+
+#for gen-list
+CLOSED_SITENUM	100
+CLOSED_INSTNUM	90
+OPEN_INSTNUM	9000
+DATA_TYPE	cell
+FOLD_NUM	1
+FOLD_MODE	3
+ 
